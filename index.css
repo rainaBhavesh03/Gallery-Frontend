@@ -67,7 +67,7 @@ body, html {
     border: 1px solid #ccc;
     border-radius: 20px;
     font-size: 16px;
-    background-image: url('search-icon.png'); /* Icon image */
+    background-image: url('assets/search-icon.png'); /* Icon image */
     background-position: 10px center; /* Position the icon */
     background-repeat: no-repeat;
     background-size: 24px 24px; /* Adjust the size of the icon */
@@ -99,7 +99,7 @@ body, html {
 .navbar .close-icon {
     width: 24px; /* Adjust the size of the close icon */
     height: 24px;
-    background-image: url('close-icon.png'); /* Close icon image */
+    background-image: url('assets/close-icon.png'); /* Close icon image */
     background-position: center; /* Center the icon */
     background-repeat: no-repeat;
     background-size: contain;
@@ -110,7 +110,7 @@ body, html {
 }
 
 .navbar .close-icon:hover {
-    background-image: url('close-icon-pressed.png');
+    background-image: url('assets/close-icon-pressed.png');
 }
 
 .navbar .search-box:focus + .close-icon, .close-icon:hover {
