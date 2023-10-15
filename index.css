@@ -1,0 +1,1062 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    background-color: #FFD1D1; /* Set the background color */
+    height: 80px; /* Set the initial height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px; /* Add padding to the left and right sides */
+}
+
+.navbarLogo {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    background-color: #E96B6B;
+    text-align: center;
+    text-decoration: none;
+    height: 50px;
+    line-height: 50px;
+    width: 90px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 10px;
+}
+
+.navbar li a:hover {
+    background-color: #ffefef;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #E96B6B;
+}
+
+/* Style for the search bar container */
+.navbar .search-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the search input field */
+.navbar .search-box {
+    width: 820px;
+    height: 46px;
+    padding: 0px 40px 0px 40px; /* Add padding to the left and right, and space between icon and text */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    background-image: url('search-icon.png'); /* Icon image */
+    background-position: 10px center; /* Position the icon */
+    background-repeat: no-repeat;
+    background-size: 24px 24px; /* Adjust the size of the icon */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #000;
+}
+
+.navbar .search-box::placeholder {
+    color: #8F8F8F; /* Set the placeholder text color */
+    font-size: 16px;
+}
+
+/* Style for the search input field when not focused */
+.navbar .search-box:not(:focus) {
+    background-color: #eeeeee; /* Background color when not focused */
+    border-color: #ccc; /* Border color when not focused */
+}
+
+/* Style for the search input field when focused */
+.navbar .search-box:focus {
+    background-color: #D6D6D6; /* Background color when focused */
+    outline: none; /* Remove the default focus outline */   
+}
+
+/* Style for the close icon */
+.navbar .close-icon {
+    width: 24px; /* Adjust the size of the close icon */
+    height: 24px;
+    background-image: url('close-icon.png'); /* Close icon image */
+    background-position: center; /* Center the icon */
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer; /* Change the cursor to a pointer */
+    position: relative; /* Position the close icon absolutely */
+    left: -32px; /* Adjust the right position for padding */
+    visibility: hidden; /* Hide the close icon by default */
+}
+
+.navbar .close-icon:hover {
+    background-image: url('close-icon-pressed.png');
+}
+
+.navbar .search-box:focus + .close-icon, .close-icon:hover {
+    visibility: visible; /* Show the close icon when the search bar is in focus or when hovering over the close icon */
+}
+
+.navbar .signin-button {
+    background-color: #333; /* Background color for the Sign In button */
+    color: white; /* Text color */
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 16px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.navbar .signin-button:hover {
+    background-color: #555; /* Hover effect for the Sign In button */
+}
+
+
+
+/* SIGNUP and LOGIN MODAL CSS */
+
+#signupModal.modalWrapper {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 11;
+}
+
+#loginModal.modalWrapper {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 11;
+}
+
+#signupModal .modal {
+    position: relative;
+    width: 1180px;
+    height: 860px;
+
+    margin-inline: calc(50% - 1180px/2);
+    margin-block: 1% 0;
+
+    background-image: url(assets/bg2.jpg);
+    background-size: 700px 1050px;
+    box-shadow: 0px 0px 100px 50px rgba(43, 43, 44, 0.5);
+    border-radius: 20px;
+
+    animation: modalAnimate 0.5s ease-in-out;
+}
+
+#loginModal .modal {
+    position: relative;
+    width: 1180px;
+    height: 820px;
+
+    margin-inline: calc(50% - 1180px/2);
+
+    margin-block: 2% 0;
+
+    background-image: url(assets/bg2.jpg);
+    background-size: 700px 1050px;
+    box-shadow: 0px 0px 100px 50px rgba(43, 43, 44, 0.5);
+    border-radius: 20px;
+
+    animation: modalAnimate 0.5s ease-in-out;
+}
+
+@keyframes modalAnimate {
+    from {
+        opacity: 0
+    }
+    
+    to {
+        opacity: 1
+    }
+}
+
+#signupModal .content, #loginModal .content {
+    position: absolute;
+    left: 53.9%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background-color: beige;
+    border-radius: 15px 0 0 15px;
+}
+
+#signupModal .header, #loginModal .header {
+    position: absolute;
+    width: 156px;
+    height: 59px;
+    left: calc(50% - 156px/2 - 139px);
+    top: 2.438rem;
+}
+
+#signupModal .h1, #loginModal .h1 {
+    position: absolute;
+    left: 0%;
+    right: -0.64%;
+    top: 0%;
+    bottom: 0%;
+
+    width: max-content;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 59px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+#signupModal .header p, #loginModal .header p {
+    position: absolute;
+    left: 0%;
+    right: -81.41%;
+    top: 100%;
+    bottom: -32.2%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #818181;
+}
+
+#loginModal #Username {
+    position: absolute;
+    width: 434px;
+    height: 60px;
+    left: calc(50% - 434px/2);
+    top: 9.625rem;
+
+    box-sizing: border-box;
+
+    background: #FFF9F9;
+    border: 3px solid #D1D1D1;
+    border-radius: 15px;
+
+    text-indent: 20px;
+    font-size: 20px;
+}
+
+#loginModal #Password {
+    position: absolute;
+    width: 434px;
+    height: 60px;
+    left: calc(50% - 434px/2);
+    top: 15.25rem;
+
+    box-sizing: border-box;
+
+    background: #FFF9F9;
+    border: 3px solid #D1D1D1;
+    border-radius: 15px;
+
+    text-indent: 20px;
+    font-size: 20px;
+}
+
+#loginModal #KeepMeLoggedIn {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: calc(50% - 24px/2 - 205px);
+    top: 21.5rem;
+}
+
+#loginModal .KeepMeLoggedIn {
+    position: absolute;
+    width: 132px;
+    height: 24px;
+    left: calc(50% - 132px/2 - 107px);
+    top: 21.5rem;
+
+    margin: 3px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    color: #818181;
+}
+
+#signupModal .fullName {
+    position: absolute;
+    left: calc(50% - 434px/2);
+    top: 13.625rem;
+
+    display: flex;
+    gap: 14px;
+}
+
+#signupModal #EmailId {
+    position: absolute;
+    width: 434px;
+    height: 44px;
+    left: calc(50% - 434px/2);
+    top: 9rem;
+
+    box-sizing: border-box;
+
+    background: #FFF9F9;
+    border: 3px solid #D1D1D1;
+    border-radius: 15px;
+
+    text-indent: 20px;
+    font-size: 20px;
+}
+
+#signupModal .name {
+    /* position: absolute; */
+    width: 210px;
+    height: 44px;
+    /* left: calc(50% - 434px/2); */
+    /* top: 13.625rem; */
+
+    box-sizing: border-box;
+
+    background: #FFF9F9;
+    border: 3px solid #D1D1D1;
+    border-radius: 15px;
+
+    text-indent: 20px;
+    font-size: 20px;
+}
+
+#signupModal #Dob {
+    position: absolute;
+    width: 434px;
+    height: 44px;
+    left: calc(50% - 434px/2);
+    top: 18.25rem;
+
+    box-sizing: border-box;
+
+    background: #FFF9F9;
+    border: 3px solid #D1D1D1;
+    border-radius: 15px;
+
+    text-indent: 10px;
+    font-size: 20px;
+
+    padding-inline-end: 10px;
+}
+
+#signupModal #Username {
+    position: absolute;
+    width: 434px;
+    height: 44px;
+    left: calc(50% - 434px/2);
+    top: 22.875rem;
+
+    box-sizing: border-box;
+
+    background: #FFF9F9;
+    border: 3px solid #D1D1D1;
+    border-radius: 15px;
+
+    text-indent: 20px;
+    font-size: 20px;
+}
+
+#signupModal #Password {
+    position: absolute;
+    width: 434px;
+    height: 44px;
+    left: calc(50% - 434px/2);
+    top: 27.5rem;
+
+    box-sizing: border-box;
+
+    background: #FFF9F9;
+    border: 3px solid #D1D1D1;
+    border-radius: 15px;
+
+    text-indent: 20px;
+    font-size: 20px;
+}
+
+#signupModal ::placeholder, #loginModal ::placeholder {
+    position: absolute;
+    height: 19px;
+    top: calc(50% - 19px/2 - 0.5px);
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    color: #818181;
+}
+
+#signupModal .Policy {
+    position: absolute;
+    width: 278px;
+    height: 24px;
+    left: calc(50% - 132px/2 - 76px);
+    top: 31.125rem;
+
+    margin: 3px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    /* identical to box height */
+
+    /* display: flex;
+    align-items: center; */
+
+    text-align: center;
+
+    color: #818181;
+}
+
+#signupModal .forgotPassword, #loginModal .forgotPassword {
+    position: absolute;
+    width: 129px;
+    height: 24px;
+    left: calc(50% - 129px/2 + 151.5px);
+    top: 21.5rem;
+
+    margin: 3px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    /* line-height: 19px; */
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: right;
+    text-decoration: none;
+
+    color: #7754F6;
+}
+
+#signupModal .signup {
+    position: absolute;
+    width: 434px;
+    height: 60px;
+    left: calc(50% - 434px/2);
+    top: 35rem;
+
+    box-sizing: border-box;
+
+    background: #7754F6;
+    border: 0px;
+    box-shadow: 0px 15px 30px -10px rgba(119, 84, 246, 0.5);
+    border-radius: 15px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#loginModal .login {
+    position: absolute;
+    width: 434px;
+    height: 60px;
+    left: calc(50% - 434px/2);
+    top: 25.688rem;
+
+    box-sizing: border-box;
+
+    background: #7754F6;
+    border: 0px;
+    box-shadow: 0px 15px 30px -10px rgba(119, 84, 246, 0.5);
+    border-radius: 15px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#signupModal .question {
+    position: absolute;
+    width: 222px;
+    height: 19px;
+    left: calc(50% - 222px/2 - 106px);
+    top: 41rem;
+}
+
+#loginModal .question {
+    position: absolute;
+    width: 222px;
+    height: 19px;
+    left: calc(50% - 222px/2 - 106px);
+    top: 32.125rem;
+}
+
+#signupModal .question p, #loginModal .question p {
+    position: absolute;
+    width: 165px;
+    height: 19px;
+    left: 0px;
+    top: 0px;
+
+    margin: 0px;;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    color: #818181;
+}
+
+#signupModal .question a {
+    position: absolute;
+    width: max-content;
+    height: 19px;
+    left: 140px;
+    top: 0px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    color: #7754F6;
+}
+
+#loginModal .question a {
+    position: absolute;
+    width: max-content;
+    height: 19px;
+    left: 168px;
+    top: 0px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    color: #7754F6;
+}
+
+#signupModal .break {
+    position: absolute;
+    width: 434px;
+    height: 19px;
+    left: calc(50% - 434px/2);
+    top: 44.063rem;
+}
+
+#loginModal .break {
+    position: absolute;
+    width: 434px;
+    height: 19px;
+    left: calc(50% - 434px/2);
+    top: 37.125rem;
+}
+
+#signupModal .line1, #loginModal .line1 {
+    position: absolute;
+    width: 128px;
+    height: 2px;
+    left: 0px;
+    top: 10px;
+
+    background-color: #D1D1D1;
+}
+
+#signupModal .break p, #loginModal .break p {
+    position: absolute;
+    width: 178px;
+    height: 19px;
+    left: 128px;
+    top: 0px;
+
+    margin: 0;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    color: #818181;
+}
+
+#signupModal .line2, #loginModal .line2 {
+    position: absolute;
+    width: 128px;
+    height: 2px;
+    left: 306px;
+    top: 10px;
+
+    background-color: #D1D1D1;
+}
+
+#signupModal .social {
+    position: absolute;
+    width: 434px;
+    height: 66px;
+    left: calc(50% - 434px/2);
+    top: 47.125rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#loginModal .social {
+    position: absolute;
+    width: 434px;
+    height: 66px;
+    left: calc(50% - 434px/2);
+    top: 42.625rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#signupModal .close, #loginModal .close {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: 10px;
+    top: 10px;
+}
+
+#signupModal .close:hover, #signupModal .close:focus, #loginModal .close:hover, #loginModal .close:focus {
+    stroke: black;
+    cursor: pointer;
+}
+
+
+/* SECTION 1 ----------------------------------------------- */
+#section_1 {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    background: #FFF6F6;
+}
+
+.heroContent {
+    position: absolute;
+    height: 100px;
+    top: 120px;
+    z-index: 2;
+}
+
+.heroContent h1 {
+    margin: 0;
+    font-size: 46px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 100px;
+    text-align: center;
+    text-shadow: 2px 2px #ffa0a0;
+}
+
+/* SLIDER CSS -----------------------------------------------*/  
+.slider {
+    flex: 1;
+}
+.carousel {
+    width: 1000px;
+    height: 600px;
+    margin: 230px auto 0px  auto;
+    position: relative;
+  }
+  
+  .carousel > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+  }
+  
+  .slide > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+  }
+  
+  .carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, .1);
+  }
+  
+  .carousel-button:hover,
+  .carousel-button:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, .2);
+  }
+  
+  .carousel-button:focus {
+    outline: 1px solid black;
+  }
+  
+  .carousel-button.prev {
+    left: 1rem;
+  }
+  
+  .carousel-button.next {
+    right: 1rem;
+  }
+
+
+
+.bottom_blur {
+    position: absolute;
+    width: 100%;
+    height: 251px;
+    z-index: 3;
+    bottom: 0px;
+    background: linear-gradient(180deg, rgba(255, 246, 246, 0.0) 0%, rgba(255, 246, 246, 0.40) 20%, rgba(255, 246, 246, 0.75) 40%, rgba(255, 246, 246, 0.90) 60%, #FFF6F6 80%, #FFF6F6 100%);
+}
+
+
+.scrollToNext {
+    flex: 1;
+    display: flex;
+    bottom: 80px;
+    position: absolute;
+    z-index: 4;
+    height: 100px;
+    width: 100px;
+
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.scrollBlur {
+    position: absolute;
+    background-color: #E96B6B;
+    filter: blur(30px);
+    height: 80px;
+    width: 80px;
+}
+
+.arrow_svg {
+    height: 26px;
+    width: 26px;
+    z-index: 4;
+}
+
+
+
+/* SECTION 2 ------------------------------------- */
+#section_2 {
+    height: 100vh;
+    background: #FFE5E5;
+    position: relative;
+}
+
+.displayCard {
+    position: absolute;
+    border-radius: 15px;
+    background: #FFF;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.8);
+}
+
+.card_1 {
+    width: 261px;
+    height: 297px;
+    top: 483px;
+    left: 306px;
+}
+
+.card_2 {
+    width: 283px;
+    height: 406px;
+    top: 195px;
+    left: 165px;
+}
+
+.card_3 {
+    width: 213px;
+    height: 236px;
+    top: 109px;
+    left: 377px;
+}
+
+
+.card_4 {
+    width: 368px;
+    height: 263px;
+    top: 286px;
+    left: 439px;
+}
+
+.displayCard img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+}
+
+#section_2 .content {
+    position: absolute;
+    top: 200px;
+    right: 170px;
+}
+
+#section_2 .content h1 {
+    margin: 0;
+    font-size: 46px;
+    font-family: 'Roboto', sans-serif;
+    /* line-height: 100px; */
+    text-align: center;
+}
+
+#section_2 .content p {
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    /* line-height: 100px; */
+    text-align: center;
+}
+
+
+
+
+
+/* SECTION 3 ------------------------------------- */
+#section_3 {
+    height: 90vh;
+    background: #FFF;
+    position: relative;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px 0 0 0;
+    font-family: 'Roboto';
+}
+
+.contact_box {
+    background-color: #ffeeee;
+    display: flex;
+}
+
+.contact_left {
+    flex-basis: 60%;
+    padding: 40px 60px;
+}
+
+.contact_right {
+    flex-basis: 40%;
+    padding: 40px;
+    color: white;
+    background-color: #ffa0a0;
+}
+
+.container h2 {
+    margin-bottom: 10px;
+    font-size: 46px;
+}
+.container p {
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+.input_row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input_row .input_group {
+    flex-basis: 45%;
+}
+
+.container input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 5px;
+    background-color: #ffeeee;
+}
+
+.container textarea {
+    width: 100%;
+    height: 100px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f1dfdf;
+    font-family: 'Roboto';
+    resize: none;
+    transition: all 0.2s;
+}
+
+.container textarea:focus {
+    border: 2px solid #ffa0a0;
+}
+
+.container label {
+    padding-bottom: 6px;
+    display: block;
+    color: #ffa0a0;
+    font-weight: 500;
+}
+
+.container button {
+    width: 100px;
+    border: none;
+    outline: none;
+    height: 36px;
+    border-radius: 30px;
+    background-color: white;
+    margin-top: 20px;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px 0px rgb(156 135 135 / 30%);
+}
+
+.contact_left h3 {
+    font-weight: 600;
+    margin: 0 0 30px 0;
+    color: #ffa0a0;
+    font-size: 24px;
+}
+
+.contact_right h3 {
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0 0 30px 0;
+}
+
+.container tr td:first-child {
+    padding-right: 20px;
+    font-weight: 500;
+}
+
+.container tr td {
+    padding-top: 20px;
+}
+
+#scrollArrow_2 {
+    right: 0px;
+}
+
+#section_3 .arrow_svg {
+    transform: rotate(180deg);
+}

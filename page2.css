@@ -1,0 +1,240 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    background-color: #FFD1D1; /* Set the background color */
+    height: 80px; /* Set the initial height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px; /* Add padding to the left and right sides */
+}
+
+.navbarLogo {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    background-color: #E96B6B;
+    text-align: center;
+    text-decoration: none;
+    height: 50px;
+    line-height: 50px;
+    width: 90px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 10px;
+}
+
+.navbar li a:hover {
+    background-color: #ffefef;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #E96B6B;
+}
+
+/* Style for the search bar container */
+.navbar .search-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the search input field */
+.navbar .search-box {
+    width: 820px;
+    height: 46px;
+    padding: 0px 40px 0px 40px; /* Add padding to the left and right, and space between icon and text */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    background-image: url('search-icon.png'); /* Icon image */
+    background-position: 10px center; /* Position the icon */
+    background-repeat: no-repeat;
+    background-size: 24px 24px; /* Adjust the size of the icon */
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #000;
+}
+
+.navbar .search-box::placeholder {
+    color: #8F8F8F; /* Set the placeholder text color */
+    font-size: 16px;
+}
+
+/* Style for the search input field when not focused */
+.navbar .search-box:not(:focus) {
+    background-color: #eeeeee; /* Background color when not focused */
+    border-color: #ccc; /* Border color when not focused */
+}
+
+/* Style for the search input field when focused */
+.navbar .search-box:focus {
+    background-color: #D6D6D6; /* Background color when focused */
+    outline: none; /* Remove the default focus outline */   
+}
+
+/* Style for the close icon */
+.navbar .close-icon {
+    width: 24px; /* Adjust the size of the close icon */
+    height: 24px;
+    background-image: url('close-icon.png'); /* Close icon image */
+    background-position: center; /* Center the icon */
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer; /* Change the cursor to a pointer */
+    position: relative; /* Position the close icon absolutely */
+    left: -32px; /* Adjust the right position for padding */
+    visibility: hidden; /* Hide the close icon by default */
+}
+
+.navbar .close-icon:hover {
+    background-image: url('close-icon-pressed.png');
+}
+
+.navbar .search-box:focus + .close-icon, .close-icon:hover {
+    visibility: visible; /* Show the close icon when the search bar is in focus or when hovering over the close icon */
+}
+
+.personalInfo {
+    background-color: white;
+    display: flex;
+    position: relative;
+    height: 50px;
+    width: 80px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.personalInfo img {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+}
+
+.arrow_svg {
+    height: 14px;
+    width: 14px;
+    z-index: 9;
+    cursor: pointer;
+}
+
+#personalModal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    height: 50px;
+    width: 100px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    top: 65px;
+}
+
+#personalModal h2 {
+    margin: 0;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+/* SECTION 1 ----------------------------------------------- */
+#section_1 {
+    width: 100%;
+    background: #FFF6F6;
+    min-height: 100vh;
+    display: inline-block;  /*Prevents margins from collapsing*/
+}
+
+.posts {
+    margin: 100px auto 20px auto;
+    width: 80%;
+    columns: 4;
+    column-gap: 40px;
+}
+
+.post {
+    width: 100%;
+    margin-bottom: 30px;
+    break-inside: avoid;
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    flex-direction: column;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.post img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.postInfo {
+    display: flex;
+    margin: 10px;
+    align-items: center;
+}
+
+.postInfo img {
+    max-width: 40px;
+    margin-right: 10px;
+}
+
+.postInfo p {
+    font-weight: bold;
+    padding: 0px 10px;
+    flex: 1;
+    font-size: 18px;
+}
+
+@media (max-width: 1200px) {
+    .posts {
+        width: calc(100% - 40px);
+        columns: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .posts {
+        columns: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .posts {
+        columns: 1;
+    }
+}
+
+.clickAble:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.4);
+}

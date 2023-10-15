@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+    
+    <ul class="navbar">
+        <li><img src="logo.svg" class="navbarLogo" onclick="window.location.href = `page2.html`" alt="Logo"></li>
+        <li class="search-container">
+            <input type="text" class="search-box" placeholder="Search..." id="searchInput">
+            <span class="close-icon" onclick="closeSearch()"></span>
+        </li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="personalInfo">
+            <img src="dp.png" alt="dp">
+            <div class="arrow_svg" id="modalTrigger" onclick="handleModalBtn()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" fill="none">
+                    <path d="M22.729 10.5346L13.8283 19.4618C13.7224 19.5677 13.6076 19.643 13.484 19.6875C13.3603 19.732 13.2279 19.7539 13.0866 19.7532C12.9453 19.7532 12.8129 19.7309 12.6893 19.6864C12.5656 19.6419 12.4508 19.567 12.3449 19.4618L3.41774 10.5346C3.1705 10.2874 3.04688 9.97832 3.04688 9.60746C3.04688 9.2366 3.17933 8.91872 3.44423 8.65382C3.70913 8.38892 4.01818 8.25647 4.37138 8.25647C4.72458 8.25647 5.03363 8.38892 5.29853 8.65382L13.0866 16.4419L20.8747 8.65382C21.1219 8.40658 21.4267 8.28296 21.7891 8.28296C22.1515 8.28296 22.4648 8.41541 22.729 8.68031C22.9939 8.94521 23.1263 9.25426 23.1263 9.60746C23.1263 9.96066 22.9939 10.2697 22.729 10.5346Z" fill="black"/>
+                </svg>
+            </div>
+            <div id="personalModal">
+                <h2 onclick="handleLogout()">Logout</h2>
+            </div>
+        </li>
+    </ul>
+
+    <section id="section_1">
+        <section class="posts">
+            <div class="post clickAble">
+                <img class="postImage" src="post1.jpeg" alt="post1">
+                <div class="postInfo">
+                    <img src="dp.png" alt="dp">
+                    <p>User Name</p>
+                </div>
+            </div>
+            <div class="post clickAble">
+                <img class="postImage" src="post2.jpg" alt="post2">
+                <div class="postInfo">
+                    <img src="dp.png" alt="dp">
+                    <p>User Name</p>
+                </div>
+            </div>
+            <div class="post clickAble">
+                <img class="postImage" src="post3.jpeg" alt="post3">
+                <div class="postInfo">
+                    <img src="dp.png" alt="dp">
+                    <p>User Name</p>
+                </div>
+            </div>
+            <div class="post clickAble">
+                <img class="postImage" src="post4.jpg" alt="post4">
+                <div class="postInfo">
+                    <img src="dp.png" alt="dp">
+                    <p>User Name</p>
+                </div>
+            </div>
+            <div class="post clickAble">
+                <img class="postImage" src="post5.jpeg" alt="post5">
+                <div class="postInfo">
+                    <img src="dp.png" alt="dp">
+                    <p>User Name</p>
+                </div>
+            </div>
+            <div class="post clickAble">
+                <img class="postImage" src="post6.jpg" alt="post6">
+                <div class="postInfo">
+                    <img src="dp.png" alt="dp">
+                    <p>User Name</p>
+                </div>
+            </div>
+            <div class="post clickAble">
+                <img class="postImage" src="post2.jpg" alt="post2">
+                <div class="postInfo">
+                    <img src="dp.png" alt="dp">
+                    <p>User Name</p>
+                </div>
+            </div>
+            <div class="post clickAble">
+                <img class="postImage" src="post3.jpeg" alt="post3">
+                <div class="postInfo">
+                    <img src="dp.png" alt="dp">
+                    <p>User Name</p>
+                </div>
+            </div>
+            <div class="post clickAble">
+                <img class="postImage" src="post5.jpeg" alt="post5">
+                <div class="postInfo">
+                    <img src="dp.png" alt="dp">
+                    <p>User Name</p>
+                </div>
+            </div>
+            <div class="post clickAble">
+                <img class="postImage" src="post6.jpg" alt="post6">
+                <div class="postInfo">
+                    <img src="dp.png" alt="dp">
+                    <p>User Name</p>
+                </div>
+            </div>
+            <div class="post clickAble">
+                <img class="postImage" src="post2.jpg" alt="post2">
+                <div class="postInfo">
+                    <img src="dp.png" alt="dp">
+                    <p>User Name</p>
+                </div>
+            </div>
+            <div class="post clickAble">
+                <img class="postImage" src="post4.jpg" alt="post4">
+                <div class="postInfo">
+                    <img src="dp.png" alt="dp">
+                    <p>User Name</p>
+                </div>
+            </div>
+            <div class="post clickAble">
+                <img class="postImage" src="post5.jpeg" alt="post5">
+                <div class="postInfo">
+                    <img src="dp.png" alt="dp">
+                    <p>User Name</p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script src="page2.js"></script>
+</body>
+</html>
